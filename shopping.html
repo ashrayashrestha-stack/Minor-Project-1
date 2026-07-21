@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyza</title>
+  <link rel="icon" href="/Source/Shopping/Logo B.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a class="navbar-brand" href="shopping.html">
+          <img src="Source/Shopping/Logo B.png" alt="Buyza">
+        </a>
+        <button class="navbar-toggle" id="navToggle" aria-label="Toggle navigation">
+
+        </button>
+        <div class="navbar-menu" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li><a class="nav-link active" href="shopping.html">Home</a></li>
+            <li><a class="nav-link" href="#Todays Special">Todays Special</a></li>
+            <li><a class="nav-link" href="FAQ.html">FAQ</a></li>
+            <li class="nav-dropdown">
+              <a class="nav-link dropdown-toggle" href="#">Categories</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Tools, DIYs</a></li>
+                <li><a href="#">Home & Lifestyle</a></li>
+                <li><a href="#">Sports & Outdoors</a></li>
+                <li><a href="#">Electronic Accessories</a></li>
+                <li><a href="#">Groceries & Pets</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <form class="search-form" role="search">
+          <input class="search-input" type="search" placeholder="🔍 Search" aria-label="Search">
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+        <a class="cart-link" href="cart.html">
+          <img class="cart-icon" src="/Source/e46e34187c03f703c6f7ce552ea76b63.png" alt="Cart">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero-carousel-wrap">
+    <div class="carousel hero-carousel" data-interval="4000">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="/Source/Shopping/test1.png" alt="Slide 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="/Source/Shopping/test 2.png" alt="Slide 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="/Source/Shopping/test 3.png" alt="Slide 3">
+        </div>
+      </div>
+      <button class="carousel-btn prev" aria-label="Previous"><</button>
+      <button class="carousel-btn next" aria-label="Next">></button>
+    </div>
+  </div>
+
+  <div id="Todays Special"></div>
+
+  <section class="special">
+    <h2 class="section-title">Todays Special</h2>
+    <div class="card-grid">
+      <div class="card">
+        <a href="item1.html">
+          <img src="/Source/Shopping/Logitech Thumbnail.png" class="card-img-top" alt="Item 1">
+        </a>
+        <div class="card-body">
+          <a href="item1.html" style="text-decoration:none;"><h5 class="card-title">Logitech G402 Mouse</h5></a>
+          <p class="card-text">One of the most popular budget Gaming Mouse.</p>
+          <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="item2.html">
+          <img src="/Source/Shopping/Denver.jpg" class="card-img-top" alt="Denver Perfume">
+        </a>
+        <div class="card-body">
+          <a href="item2.html" style="text-decoration:none;"><h5 class="card-title">Denver Perfume</h5></a>
+          <p class="card-text">Its the real secret of my and many more's success.</p>
+          <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="item3.html">
+          <img src="/Source/Shopping/ben_10_OG_omnitrix.png" class="card-img-top" alt="Omnitrix">
+        </a>
+        <div class="card-body">
+          <a href="item3.html" style="text-decoration:none;"><h5 class="card-title">Omnitrix</h5></a>
+          <p class="card-text">It started when an alien device did what it did.</p>
+          <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="items-section">
+    <div class="card-grid">
+      <div class="card">
+        <a href="item1.html">
+          <img src="/Source/Shopping/Logitech Thumbnail.png" class="card-img-top" alt="Item 1">
+        </a>
+        <div class="card-body">
+          <a href="item1.html" style="text-decoration:none;"><h5 class="card-title">Logitech G402 Mouse</h5></a>
+          <p class="card-text">One of the most popular budget Gaming Mouse.</p>
+          <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="item2.html">
+          <img src="/Source/Shopping/Denver.jpg" class="card-img-top" alt="Denver Perfume">
+        </a>
+        <div class="card-body">
+          <a href="item2.html" style="text-decoration:none;"><h5 class="card-title">Denver Perfume</h5></a>
+          <p class="card-text">Its the real secret of my and many more's success.</p>
+          <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="item3.html">
+          <img src="/Source/Shopping/ben_10_OG_omnitrix.png" class="card-img-top" alt="Omnitrix">
+        </a>
+        <div class="card-body">
+          <a href="item3.html" style="text-decoration:none;"><h5 class="card-title">Omnitrix</h5></a>
+          <p class="card-text">It started when an alien device did what it did.</p>
+          <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
