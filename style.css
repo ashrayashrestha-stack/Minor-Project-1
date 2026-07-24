@@ -537,3 +537,235 @@ img {
   border: none;
   border-top: 1px solid #ddd;
 }
+
+/* ----- */
+
+/* Login circle button */
+.login-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile menu - hidden by default */
+.profile-menu {
+  display: none;
+  position: relative;
+}
+
+.profile-menu.show {
+  display: block;
+}
+
+.profile-btn {
+  border: none;
+  background: #fff;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile-btn:hover {
+  background: #ffc107;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  padding: 6px 0;
+  z-index: 1001;
+}
+
+.profile-dropdown.open {
+  display: block;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #212529;
+  font-size: 14px;
+}
+
+.profile-dropdown a:hover {
+  background: #f1f1f1;
+}
+
+.login-btn:hover {
+  background: #ffc107;
+}
+
+/* Hide the checkbox itself */
+.login-toggle {
+  display: none;
+}
+
+/* Popup overlay - hidden by default */
+.login-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+}
+
+/* Show overlay when checkbox is checked */
+/* Popup overlay - hidden by default */
+.login-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+
+/* Shown when JS adds the "show" class */
+.login-overlay.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  max-width: 340px;
+  position: relative;
+}
+
+.login-box h2 {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-box label[for="loginEmail"],
+.login-box label[for="loginPassword"] {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-box input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.login-submit {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.login-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+  border: none;   
+  background: none;  
+}
+
+/* -----  */
+
+/* Dark mode button */
+.theme-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  background: #1787ff;
+}
+
+/* ===== DARK MODE ===== */
+/* When JS adds "dark-mode" class to body, these override the normal styles */
+body.dark-mode {
+  background: #121212;
+  color: #e9e9e9;
+}
+
+body.dark-mode .navbar {
+  background-color: #0a3d4a;
+}
+
+body.dark-mode .nav-link {
+  color: #e9e9e9;
+}
+
+body.dark-mode .special,
+body.dark-mode .product-page,
+body.dark-mode .cart-page,
+body.dark-mode .faq-page {
+  background: #1e1e1e;
+}
+
+body.dark-mode .card,
+body.dark-mode .product-title-box,
+body.dark-mode .product-info,
+body.dark-mode .cart-items,
+body.dark-mode .faq-title,
+body.dark-mode .faq-box {
+  background: #2a2a2a;
+  color: #e9e9e9;
+}
+
+body.dark-mode .card-text {
+  color: #bbb;
+}
+
+body.dark-mode .breadcrumb-list li {
+  color: #bbb;
+}
+
+body.dark-mode .breadcrumb-list li.active {
+  color: #e9e9e9;
+}
+
+body.dark-mode .dropdown-menu {
+  background: #2a2a2a;
+}
+
+body.dark-mode .dropdown-menu li a {
+  color: #e9e9e9;
+}
+
+body.dark-mode .dropdown-menu li a:hover {
+  background: #3a3a3a;
+}
+
+/* ----- */

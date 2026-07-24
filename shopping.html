@@ -43,6 +43,16 @@
         <a class="cart-link" href="cart.html">
           <img class="cart-icon" src="/Source/e46e34187c03f703c6f7ce552ea76b63.png" alt="Cart">
         </a>
+        <button class="theme-btn" onclick="toggleDarkMode(this)">🌙</button>
+        <button class="login-btn" id="loginBtn" onclick="toggleLogin()">👤</button>
+        <div class="profile-menu" id="profileMenu">
+          <button class="profile-btn" onclick="toggleDropdown()">👤 ▾</button>
+          <div class="dropdown-menu profile-dropdown" id="profileDropdown">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#" onclick="logOut()">Log Out</a>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -60,8 +70,9 @@
           <img src="/Source/Shopping/test 3.png" alt="Slide 3">
         </div>
       </div>
-      <button class="carousel-btn prev" aria-label="Previous"><</button>
-      <button class="carousel-btn next" aria-label="Next">></button>
+      <button class="carousel-btn prev" aria-label="Previous">
+        << /button>
+          <button class="carousel-btn next" aria-label="Next">></button>
     </div>
   </div>
 
@@ -75,7 +86,9 @@
           <img src="/Source/Shopping/Logitech Thumbnail.png" class="card-img-top" alt="Item 1">
         </a>
         <div class="card-body">
-          <a href="item1.html" style="text-decoration:none;"><h5 class="card-title">Logitech G402 Mouse</h5></a>
+          <a href="item1.html" style="text-decoration:none;">
+            <h5 class="card-title">Logitech G402 Mouse</h5>
+          </a>
           <p class="card-text">One of the most popular budget Gaming Mouse.</p>
           <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
         </div>
@@ -85,7 +98,9 @@
           <img src="/Source/Shopping/Denver.jpg" class="card-img-top" alt="Denver Perfume">
         </a>
         <div class="card-body">
-          <a href="item2.html" style="text-decoration:none;"><h5 class="card-title">Denver Perfume</h5></a>
+          <a href="item2.html" style="text-decoration:none;">
+            <h5 class="card-title">Denver Perfume</h5>
+          </a>
           <p class="card-text">Its the real secret of my and many more's success.</p>
           <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
         </div>
@@ -95,7 +110,9 @@
           <img src="/Source/Shopping/ben_10_OG_omnitrix.png" class="card-img-top" alt="Omnitrix">
         </a>
         <div class="card-body">
-          <a href="item3.html" style="text-decoration:none;"><h5 class="card-title">Omnitrix</h5></a>
+          <a href="item3.html" style="text-decoration:none;">
+            <h5 class="card-title">Omnitrix</h5>
+          </a>
           <p class="card-text">It started when an alien device did what it did.</p>
           <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
         </div>
@@ -110,7 +127,9 @@
           <img src="/Source/Shopping/Logitech Thumbnail.png" class="card-img-top" alt="Item 1">
         </a>
         <div class="card-body">
-          <a href="item1.html" style="text-decoration:none;"><h5 class="card-title">Logitech G402 Mouse</h5></a>
+          <a href="item1.html" style="text-decoration:none;">
+            <h5 class="card-title">Logitech G402 Mouse</h5>
+          </a>
           <p class="card-text">One of the most popular budget Gaming Mouse.</p>
           <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
         </div>
@@ -120,7 +139,9 @@
           <img src="/Source/Shopping/Denver.jpg" class="card-img-top" alt="Denver Perfume">
         </a>
         <div class="card-body">
-          <a href="item2.html" style="text-decoration:none;"><h5 class="card-title">Denver Perfume</h5></a>
+          <a href="item2.html" style="text-decoration:none;">
+            <h5 class="card-title">Denver Perfume</h5>
+          </a>
           <p class="card-text">Its the real secret of my and many more's success.</p>
           <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
         </div>
@@ -130,13 +151,34 @@
           <img src="/Source/Shopping/ben_10_OG_omnitrix.png" class="card-img-top" alt="Omnitrix">
         </a>
         <div class="card-body">
-          <a href="item3.html" style="text-decoration:none;"><h5 class="card-title">Omnitrix</h5></a>
+          <a href="item3.html" style="text-decoration:none;">
+            <h5 class="card-title">Omnitrix</h5>
+          </a>
           <p class="card-text">It started when an alien device did what it did.</p>
           <a href="cart.html" class="btn btn-sm btn-warning">Add to Cart</a>
         </div>
       </div>
     </div>
   </section>
+
+
+  <input type="checkbox" id="loginToggle" class="login-toggle">
+
+  <div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <button class="login-close" onclick="toggleLogin()">&times;</button>
+    <h2>Login</h2>
+    <form onsubmit="return handleLogin(event)">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" placeholder="you@example.com" required>
+
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" required>
+
+      <button type="submit" class="btn btn-warning login-submit">Login</button>
+    </form>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>
