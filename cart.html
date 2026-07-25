@@ -18,7 +18,6 @@
           <img src="Source/Shopping/Logo B.png" alt="Buyza">
         </a>
         <button class="navbar-toggle" id="navToggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
         </button>
         <div class="navbar-menu" id="navbarMenu">
           <ul class="navbar-nav">
@@ -38,7 +37,7 @@
           </ul>
         </div>
         <form class="search-form" role="search">
-          <input class="search-input" type="search" placeholder="Search" aria-label="Search">
+          <input class="search-input" type="search" placeholder="🔍 Search" aria-label="Search">
           <button class="search-btn" type="submit">Search</button>
         </form>
         <a class="cart-link" href="cart.html">
@@ -60,8 +59,8 @@
   </header>
 
   <div class="cart-page">
-    <div class="cart-items">
-      <h2>0 items in cart</h2>
+    <div class="cart-items" id="cartItemsList">
+      <h2>Loading cart...</h2>
     </div>
     <div class="cart-actions">
       <a href="shopping.html">
@@ -73,7 +72,7 @@
 
   <div class="login-overlay" id="loginOverlay">
     <div class="login-box">
-      <button class="login-close" onclick="toggleLogin()">&times;</button>
+      <button class="login-close" onclick="toggleLogin()">x</button>
       <h2>Login</h2>
       <form onsubmit="return handleLogin(event)">
         <label for="loginEmail">Email</label>
@@ -87,7 +86,7 @@
     </div>
   </div>
 
-  
+
   <script src="script.js"></script>
 </body>
 

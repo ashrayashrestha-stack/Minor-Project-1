@@ -1,5 +1,5 @@
 // =========================================================
-// Mart.com — shared behaviour (no Bootstrap JS)
+// Buyza 
 // =========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initDropdowns();
   initCarousels();
   checkLoginStatus();
+  renderCart();
+  applyDarkModeOnLoad();
 });
 
 /* ---------- Mobile navbar toggle ---------- */
@@ -51,7 +53,7 @@ function initDropdowns() {
   });
 }
 
-/* ---------- Custom carousel (autoplay + prev/next) ---------- */
+/* ---------- Custom carousel ---------- */
 function initCarousels() {
   var carousels = document.querySelectorAll(".carousel");
 
@@ -112,9 +114,30 @@ function initCarousels() {
 }
 
 
+
+
 /* ---------- Dark mode ---------- */
 function toggleDarkMode(btn) {
   document.body.classList.toggle("dark-mode");
+  document.documentElement.classList.toggle("dark-mode");
+
+  var isDark = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDark ? "true" : "false");
+
+  updateThemeIcon();
+}
+
+function applyDarkModeOnLoad() {
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+    document.documentElement.classList.add("dark-mode");
+  }
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  var btn = document.querySelector(".theme-btn");
+  if (!btn) return;
 
   if (document.body.classList.contains("dark-mode")) {
     btn.textContent = "☀️";
@@ -172,4 +195,105 @@ function checkLoginStatus() {
   if (localStorage.getItem("loggedIn") === "true") {
     showProfileMenu();
   }
+}
+
+
+/* ---------- Login check helper ---------- */
+function isLoggedIn() {
+  return localStorage.getItem("loggedIn") === "true";
+}
+
+/* ---------- Cart (localStorage-based) ---------- */
+function getCart() {
+  var cart = localStorage.getItem("cart");
+  return cart ? JSON.parse(cart) : [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function addToCart(event, name, price, img) {
+  event.preventDefault();
+
+  if (!isLoggedIn()) {
+    toggleLogin();
+    return;
+  }
+
+  var cart = getCart();
+  var existing = cart.find(function (item) { return item.name === name; });
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name: name, price: price, img: img, qty: 1 });
+  }
+
+  saveCart(cart);
+  alert("Added to Cart!");
+}
+
+function removeFromCart(index) {
+  var cart = getCart();
+
+  cart[index].qty -= 1;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+
+  saveCart(cart);
+  renderCart();
+}
+
+function renderCart() {
+  var container = document.getElementById("cartItemsList");
+  if (!container) return;
+
+  var cart = getCart();
+  container.innerHTML = "";
+
+  if (cart.length === 0) {
+    container.innerHTML = "<h2>Your cart is empty</h2>";
+    return;
+  }
+
+  var total = 0;
+
+  cart.forEach(function (item, index) {
+    total += item.price * item.qty;
+
+    var row = document.createElement("div");
+    row.className = "cart-row";
+
+    var img = document.createElement("img");
+    img.src = item.img;
+    img.className = "cart-row-img";
+
+    var info = document.createElement("div");
+    info.className = "cart-row-info";
+    info.innerHTML = "<h4>" + item.name + "</h4><p>Rs." + formatRs(item.price) + " x " + item.qty + "</p>";
+
+    var removeBtn = document.createElement("button");
+    removeBtn.className = "btn btn-sm btn-outline-warning";
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = function () {
+      removeFromCart(index);
+    };
+
+    row.appendChild(img);
+    row.appendChild(info);
+    row.appendChild(removeBtn);
+    container.appendChild(row);
+  });
+
+  var totalRow = document.createElement("h3");
+  totalRow.className = "cart-total";
+  totalRow.textContent = "Total: Rs." + formatRs(total);
+  container.appendChild(totalRow);
+}
+
+function formatRs(num) {
+  return num.toLocaleString('en-IN');
 }
